@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <div class="container">
+        <div class="header">
+            <h2>CREATE GROUP</h2>
+        </div>
+        <form action="/create" method="POST" class="form" id="form">
+            <div class="form-control">
+                <label for="">groupname</label>
+                <input type="text" id="grpname" placeholder="enter group name" autocomplete="off" name="grpname">
+                <small>Error Msg</small>
+            </div>
+            <div class="form-control">
+                <label for="">group id</label>
+                <input type="text" id="grpid" placeholder="enter group grpid" autocomplete="off" name="grpid">
+                <small>Error Msg</small>
+            </div>
+             <div class="form-control">
+                <label for="">subject</label>
+                <input type="text" id="subject" placeholder="enter subject name" autocomplete="off" name="subject">
+                <small>Error Msg</small>
+            </div>
+             <div class="form-control">
+                <label for="">start date</label>
+                <input type="date" id="sdate" placeholder="enter start date" autocomplete="off" name="startdate">
+                <small>Error Msg</small>
+            </div>
+             <div class="form-control">
+                <label for="">end date</label>
+                <input type="date" id="enddate" placeholder="enter end date" autocomplete="off" name="enddate">
+                <small>Error Msg</small>
+            </div>
+             <div class="form-control">
+                <label for="">group leader</label>
+                <input type="text" id="grpleader" placeholder="enter group leader name" autocomplete="off" name="groupleadername">
+                <small>Error Msg</small>
+            </div>
+            <div class="form-control">
+                <label for="">group leader emailid</label>
+                <input type="email" id="email" placeholder="enter group leader id" autocomplete="off" name="groupleaderid">
+                <small>Error Msg</small>
+            </div>
+            <input type="submit" value="submit" class="btn" name="">
+        </form>
+    </div>
+</body>
+</html>

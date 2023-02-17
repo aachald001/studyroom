@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <link rel="stylesheet" href="css/style.css">
+<body>
+      <div class="hero">
+        <nav>
+             <h2 class="logo">study group</h2>
+        </nav>
+      </div>
+     <div class="container">
+        <div class="header">
+            <h2>{{groupdetails.grpname}}</h2>
+        </div>
+        <div class="form">
+            <div class="form-control">
+                <label for=""><h3>group id</h3></label>
+                <p>{{groupdetails.grpid}}<p>
+               
+            </div>
+             <div class="form-control">
+                <label for=""><h3>subject</h3></label>
+                <p>{{groupdetails.subject}}</p>
+                
+            </div>
+             <div class="form-control">
+                <label for=""><h3>start date</h3></label>
+                <p>{{groupdetails.startdate}}</p>
+            </div>
+             <div class="form-control">
+                <label for=""><h3>end date</h3></label>
+                <p>{{groupdetails.enddate}}</p>
+            </div>
+            <div class="form-control">
+                <label for=""><h3>group leader</h3></label>
+               <p>{{groupdetails.groupleadername}}</p>
+            </div>
+            <div class="form-control">
+                <label for=""><h3>Participants</h3></label>
+                 {{#each groupdetails.participent}}
+                     <p>{{this}}</p>  
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

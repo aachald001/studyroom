@@ -1,0 +1,150 @@
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+        <div class="header">
+            <h2>REGISTRATION FROM</h2>
+        </div>
+        <form action="/register" method="POST" class="form" id="form">
+            <div class="form-control">
+                <label for="">Username</label>
+                <input type="text" id="username" placeholder="enter your name" autocomplete="off" name="name">
+                <small>Error Msg</small>
+            </div>
+             <div class="form-control">
+                <label for="">Email</label>
+                <input type="email" id="email" placeholder="enter your email" autocomplete="off" name="email">
+                <small>Error Msg</small>
+            </div>
+             <div class="form-control">
+                <label for="">phone number</label>
+                <input type="number" id="phone" placeholder="enter your phone number" autocomplete="off" name="phone">
+                <small>Error Msg</small>
+            </div>
+             <div class="form-control">
+                <label for="">password</label>
+                <input type="password" id="password" placeholder="enter your password" autocomplete="off" name="password">
+                <small>Error Msg</small>
+            </div>
+             <div class="form-control">
+                <label for="">confirm password</label>
+                <input type="password" id="cpassword" placeholder="enter your confirm password" autocomplete="off" name="confirmpassword">
+                <small>Error Msg</small>
+            </div>
+            <input type="submit" value="submit" class="btn" name="">
+        </form>
+    </div>
+    <script>
+       /* const form=document.getElementById('form');
+        const username=document.getElementById('username');
+        const email=document.getElementById('email');
+        const phone=document.getElementById('phone');
+        const password=document.getElementById('password');
+        const cpassword=document.getElementById('cpassword');
+
+        const setErrormsg=(input,errormsgs)=>{
+         const formcontrol=input.parentElement;
+         const small=formcontrol.querySelector('small');
+         formcontrol.className="form-control error";
+         small.innerText=errormsgs;
+        }
+        const setSuccessMsg=(input)=>{
+            const formcontrol=input.parentElement;
+            formcontrol.className="form-control success";
+        }
+        const isemail = (emailval) => {
+            var atSymbol=emailval.indexOf("@");
+            if(atSymbol<1) return false;
+            var dot=emailval.lastIndexOf('.');
+            if(dot<=atSymbol+3) return false;
+            if(dot===emailval.length-1) return false;
+            return true;
+        }
+           
+        const senddata=(srate,count)=>{
+            if(count===srate)
+            {
+                alert('registration successfull');
+                // swal("welcome!","registration successful","success");
+                location.href=`signin.html`;
+            }
+        }
+        const successMsg=()=>{
+            let formCon = document.getElementsByClassName('form-control');
+            var count=formCon.length-1;
+            for(var i=0;i<formCon.length;i++)
+            {
+                if(formCon[i].className==="form-control success")
+                {
+                   var srate=0+i;
+                   senddata(srate,count);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        form.addEventListener('submit',(event)=>{
+          event.preventDefault();  
+          console.log("before call validate");
+          validate();
+        })
+        
+        const validate = () => {
+        const usernameval=username.value.trim();
+        const emailval=email.value.trim();
+        const phoneval=phone.value.trim();
+        const passwordval=password.value.trim();
+        const cpasswordval=cpassword.value.trim(); 
+         
+        console.log("in validate functon");
+        if(usernameval=== "")
+        setErrormsg(username,'username cannot be blank');
+        else if(usernameval.length<=1)
+        setErrormsg(username,'username min 3 char');
+        else
+        setSuccessMsg(username);
+       
+        if(emailval=== "")
+        setErrormsg(email,'email cannot be blank');
+        else if(!isemail(emailval))
+        setErrormsg(email,'email min 3 char');
+        else
+        setSuccessMsg(email);
+        
+        if(phoneval=== "")
+        setErrormsg(phone,'phoneno cannot be blank');
+        else if(phoneval.length!=10)
+        setErrormsg(phone,'please enter valid phone no');
+        else
+        setSuccessMsg(phone);
+        
+        if(passwordval=== "")
+        setErrormsg(password,'password cannot be blank');
+        else if(passwordval.length<8)
+        setErrormsg(password,'password contain atleast 8 character');
+        else
+        setSuccessMsg(password);
+
+        if(cpasswordval=== "")
+        setErrormsg(cpassword,'confirm password cannot be blank');
+        else if(cpasswordval!=passwordval)
+        setErrormsg(cpassword,'password not matching');
+        else
+        setSuccessMsg(cpassword);
+
+      //  successMsg();
+        }*/
+  
+    </script>
+  </body>
+  </html>

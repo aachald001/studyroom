@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <div class="container">
+        <div class="header">
+            <h2>JOIN GROUP</h2>
+        </div>
+        <form action="/join" method="POST" class="form" id="form">
+            <div class="form-control">
+                <label for="">groupname</label>
+                <input type="text" id="grpname" placeholder="enter group name" autocomplete="off" name="grpname">
+                <small>Error Msg</small>
+            </div>
+            <div class="form-control">
+                <label for="">group id</label>
+                <input type="text" id="grpid" placeholder="enter group grpid" autocomplete="off" name="grpid">
+                <small>Error Msg</small>
+            </div>
+            <div class="form-control">
+                <label for="">your emailid</label>
+                <input type="email" id="email" placeholder="enter your email id" autocomplete="off" name="emailid">
+                <small>Error Msg</small>
+            </div>
+            <input type="submit" value="submit" class="btn" name="">
+        </form>
+    </div>
+</body>
+</html>
