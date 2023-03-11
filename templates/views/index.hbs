@@ -30,8 +30,9 @@
     }
     .hero{
         height:100vh;
-        width:100%;
-    }
+        width:100%; 
+    } 
+   
 .logo{
      font-size: 28px;
    } 
@@ -41,7 +42,6 @@
 
     padding:10px 20px;
    }
-
    nav ul li a{
     color :black;
     text-decoration: none;
@@ -58,15 +58,16 @@
 
 </head>
 <body>
-    <div class="hero">
-        <nav>
-             <h2 class="logo">study group</h2>
+     <div class="hero"> 
+        <nav class="navbar">
+            <h2 class="logo">study group</h2>
             <ul>
-                <li><a href="home.hbs">Home</a></li>
+                
+                {{!-- <li><a href="home.hbs">Home</a></li> --}}
                 <li><a href="/signin">login</a></li>
                 <li><a href="/register">register</a></li>
             </ul>
         </nav>
-    </div>
+     </div> 
 </body>
 </html>

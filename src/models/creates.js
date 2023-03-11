@@ -2,7 +2,8 @@ const mongoose=require("mongoose");
 const groupSchema= new mongoose.Schema({
     grpname:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     grpid:{
         type:String,

@@ -1,3 +1,4 @@
+
 //console.log("om sai ram");
 const express = require('express');
 const path=require("path");
@@ -73,10 +74,7 @@ app.post("/signin",async(req,res)=>{
        const isMatch =  await bcrypt.compare(password,useremail.password);
 
        if(isMatch){
-         console.log(useremail.ledeargrp);
-         console.log(useremail);
          const arr=useremail.participentgrp
-         console.log(arr);
         res.status(201).render("home",{arr});
        }
        else{
@@ -99,9 +97,11 @@ app.post("/join",async(req,res)=>{
       const groupid=req.body.grpid;
       const email=req.body.emailid;
       const useremail =  await Register.findOne({email:email});
+      const group=await Create.findOne({grpid:groupid}); 
       await Create.findOneAndUpdate({grpid:groupid},{$addToSet:{participent:useremail.name},})
-      await Register.findOneAndUpdate({email:email},{$addToSet:{participentgrp:groupid},})
+      await Register.findOneAndUpdate({email:email},{$addToSet:{participentgrp:group.grpname},})
       const arr=useremail.participentgrp;
+      console.log(arr);
       res.status(201).render("home",{arr});
     }catch(error){
         res.status(400).send("error");
@@ -122,6 +122,8 @@ app.post("/create",async(req,res)=>{
     try{
      const email2=req.body.groupleaderid;
      const name= req.body.groupleadername;
+     const grpname=req.body.grpname;
+     await Register.findOneAndUpdate({email:email2},{$addToSet:{participentgrp:grpname},})
      const useremail =  await Register.findOne({email:email2});
      const groupid=req.body.grpid;
 
@@ -139,7 +141,9 @@ app.post("/create",async(req,res)=>{
          })
         
          const grpinfoed = await grpinfo.save();
-         await Register.findOneAndUpdate({email:email2},{$addToSet:{participentgrp:groupid},})
+         console.log("hyy");
+         console.log(grpname)
+        //  await Register.findOneAndUpdate({email:email2},{$addToSet:{participentgrp:grpname},})
          const arr=useremail.participentgrp;
          res.status(201).render("home",{arr})
      }
@@ -151,10 +155,33 @@ app.post("/create",async(req,res)=>{
      res.status(400).send(error);
     }
  });
- app.get("/page",(req,res)=>{
-    res.render("page")
+ app.get("/page",async(req,res)=>{
+    var grpname = req.query.grpname;
+    console.log(grpname);
+    // const grpname=req.params.grpname;
+    const groupdetails= await Create.findOne({grpname:grpname});
+    console.log(groupdetails);
+    res.render("page",{groupdetails});
 });
 
+// app.get("/page/:grpname", (req, res) => {
+//     const grpname = req.params.grpname;
+//     Create.findOne({ grpname: grpname })
+//       .then((groupdetails) => {
+//         console.log(groupdetails);
+//         console.log(3+1);
+//         res.render("page", { groupdetails });
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//         res.render("error");
+//       });
+//   });
+  
+// app.get("/page",(req,res)=>{
+
+//     res.render("page")
+// });
 app.post("/home",async(req,res)=>{
     try{
      const grpid= req.body.grpid;
